@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+<script>
+
+    //URL转化成字符串
+
+
+
+function getUrlParam(url) {
+    var index = url.split("?");//index是一个数组，？前后两段
+    var params = index[1].split("&");//params是一个数组，index后段 然后分别&分开
+    var obj = {};
+    for(var i=0;i<params.length;i++){
+        var param = params[i].split("=");//param是i个数组，每个由=前后分开为2个元素
+        obj[param[0]] = param[1];//obj是个对象，里面键是param0，值是param1
+    }
+    return obj;
+}
+    var url = "http://www.baidu.com/user?name=xl&pwd=ldk&sex=女&age=22";
+    var obj = getUrlParam(url);
+    console.log(obj);
+</script>
+</body>
+</html>
